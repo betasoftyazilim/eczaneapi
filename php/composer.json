@@ -8,10 +8,10 @@
         {
             "name": "BetaSoft Yazılım",
             "email": "betasoftyazilim@gmail.com",
-            "homepage": "https://betasoft.com.tr"
+            "homepage": "https://www.betasoft.com.tr"
         }
     ],
-    "homepage": "https://betasoft.com.tr",
+    "homepage": "https://www.betasoft.com.tr",
     "require": {
         "php": ">=7.4 || >=8.0",
         "ext-curl": "*",

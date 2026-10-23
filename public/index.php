@@ -353,7 +353,7 @@ if ($topluKontrol) {
         <div class="badges">
             <span class="badge badge-success">● e-Devlet TİTCK Aktif</span>
             <span class="badge">Önbellek: <?= count($cacheStats['active_keys'] ?? []) ?> İl</span>
-            <span class="badge badge-warning">v1.1.0</span>
+            <span class="badge badge-warning">v1.1.1</span>
             <a href="https://github.com/betasoftyazilim/eczaneapi" target="_blank" rel="noopener noreferrer" class="badge" style="background: rgba(234, 179, 8, 0.15); border-color: rgba(234, 179, 8, 0.5); color: #facc15; text-decoration: none;">⭐ GitHub'da Yıldız Ver</a>
         </div>
     </div>

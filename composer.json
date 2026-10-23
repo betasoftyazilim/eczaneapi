@@ -1,17 +1,17 @@
 {
     "name": "betasoftyazilim/eczaneapi",
     "description": "Türkiye 81 İl ve İlçeleri İçin Nöbetçi Eczane API ve Kazıma Motoru (Laravel ve Tüm MVC Mimarileriyle Tam Uyumlu)",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "BetaSoft Yazılım",
             "email": "betasoftyazilim@gmail.com",
-            "homepage": "https://betasoft.com.tr"
+            "homepage": "https://www.betasoft.com.tr"
         }
     ],
-    "homepage": "https://betasoft.com.tr",
+    "homepage": "https://www.betasoft.com.tr",
     "require": {
         "php": ">=8.0",
         "ext-curl": "*",

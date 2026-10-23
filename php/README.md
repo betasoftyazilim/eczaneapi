@@ -54,6 +54,6 @@ $eczaneler = $client->nobetci('ankara', 'cankaya');
 ## 📦 Lisans & Geliştirici
 
 Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.  
-Geliştirici: **[BetaSoft Yazılım](https://betasoft.com.tr)**  
-Web: [https://betasoft.com.tr](https://betasoft.com.tr)  
+Geliştirici: **[BetaSoft Yazılım](https://www.betasoft.com.tr)**  
+Web: [https://www.betasoft.com.tr](https://www.betasoft.com.tr)  
 GitHub: [https://github.com/betasoftyazilim/eczaneapi](https://github.com/betasoftyazilim/eczaneapi)

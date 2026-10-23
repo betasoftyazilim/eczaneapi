@@ -1,0 +1,16 @@
+name: eczaneapi
+description: Türkiye 81 İl ve 973 İlçesi İçin Resmi ve Güncel Nöbetçi Eczane API Dart / Flutter İstemcisi
+version: 1.1.1
+homepage: https://www.betasoft.com.tr
+repository: https://github.com/betasoftyazilim/eczaneapi/tree/main/dart
+issue_tracker: https://github.com/betasoftyazilim/eczaneapi/issues
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.2.0
+
+dev_dependencies:
+  test: ^1.25.0
+  lints: ^3.0.0

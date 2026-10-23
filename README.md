@@ -27,10 +27,14 @@ Projenizi hangi dille geliştiriyorsanız doğrudan ilgili resmi istemci paketin
 
 | Platform / Dil | Paket Yöneticisi | Kurulum Komutu | Dizin |
 | :--- | :--- | :--- | :--- |
-| **PHP (Composer)** | Packagist | `composer require betasoft/eczaneapi` | `./` |
+| **PHP (Composer)** | Packagist | `composer require betasoftyazilim/eczaneapi-client` | [`php/`](./php) / `./` |
 | **Python (PyPI)** | pip | `pip install eczaneapi` | [`pypi/`](./pypi) |
 | **Node.js / TS (npm)** | npm / yarn / pnpm | `npm install eczaneapi` | [`npm/`](./npm) |
 | **.NET / C# (NuGet)** | dotnet CLI | `dotnet add package EczaneApi` | [`dotnet/`](./dotnet) |
+| **Go (Golang)** | go get | `go get github.com/betasoftyazilim/eczaneapi/go` | [`go/`](./go) |
+| **Dart & Flutter** | pub | `flutter pub add eczaneapi` | [`dart/`](./dart) |
+| **Rust (Cargo)** | cargo add | `cargo add eczaneapi` | [`rust/`](./rust) |
+| **Java (Maven)** | Maven / Gradle | `tr.com.betasoft:eczaneapi:1.1.1` | [`java/`](./java) |
 
 ---
 
@@ -373,10 +377,10 @@ Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
 
 ## ⭐ Geliştirici & Destek
 
-Bu proje **[BetaSoft Yazılım](https://betasoft.com.tr)** tarafından açık kaynak topluluğuna katkı sağlamak amacıyla geliştirilmiş ve ücretsiz kullanıma sunulmuştur.
+Bu proje **[BetaSoft Yazılım](https://www.betasoft.com.tr)** tarafından açık kaynak topluluğuna katkı sağlamak amacıyla geliştirilmiş ve ücretsiz kullanıma sunulmuştur.
 
 > **Projeyi beğendiyseniz ve işinize yaradıysa GitHub'da bir yıldız (⭐ Star) vermeyi unutmayın! Destekleriniz için teşekkürler.**
 > 
-> 🌐 **Resmi Web Sitesi:** [betasoft.com.tr](https://betasoft.com.tr)  
+> 🌐 **Resmi Web Sitesi:** [www.betasoft.com.tr](https://www.betasoft.com.tr)  
 > 👉 **GitHub Deposu:** [betasoftyazilim/eczaneapi](https://github.com/betasoftyazilim/eczaneapi)
 

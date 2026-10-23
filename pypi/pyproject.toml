@@ -23,7 +23,7 @@ classifiers = [
 keywords = ["eczane", "nobetci-eczane", "turkiye", "api", "saglik", "titck", "belediye"]
 
 [project.urls]
-"BetaSoft Yazılım" = "https://betasoft.com.tr"
+"BetaSoft Yazılım" = "https://www.betasoft.com.tr"
 "Homepage" = "https://github.com/betasoftyazilim/eczaneapi"
 "Bug Tracker" = "https://github.com/betasoftyazilim/eczaneapi/issues"
 "Source" = "https://github.com/betasoftyazilim/eczaneapi"

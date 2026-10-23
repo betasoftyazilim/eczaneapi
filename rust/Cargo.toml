@@ -1,0 +1,19 @@
+[package]
+name = "eczaneapi"
+version = "1.1.1"
+edition = "2021"
+authors = ["BetaSoft Yazılım <betasoftyazilim@gmail.com>"]
+description = "Türkiye 81 İl ve 973 İlçesi İçin Resmi ve Güncel Nöbetçi Eczane API Rust İstemcisi"
+license = "MIT"
+repository = "https://github.com/betasoftyazilim/eczaneapi"
+homepage = "https://www.betasoft.com.tr"
+keywords = ["eczane", "nobetci-eczane", "turkiye", "pharmacy", "api"]
+readme = "README.md"
+
+[dependencies]
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+url = "2.5"
+urlencoding = "2.1"

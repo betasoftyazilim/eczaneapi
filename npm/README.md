@@ -58,5 +58,5 @@ const liste = await client.nobetci("izmir", "bornova");
 
 ## 📦 Lisans & Geliştirici
 
-MIT License - **[BetaSoft Yazılım](https://betasoft.com.tr)**  
-Web: [https://betasoft.com.tr](https://betasoft.com.tr)
+MIT License - **[BetaSoft Yazılım](https://www.betasoft.com.tr)**  
+Web: [https://www.betasoft.com.tr](https://www.betasoft.com.tr)

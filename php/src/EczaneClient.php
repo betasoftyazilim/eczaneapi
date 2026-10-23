@@ -30,7 +30,7 @@ class EczaneClient
         $ch = curl_init();
         $headers = [
             'Accept: application/json',
-            'User-Agent: EczaneAPI-PHP-SDK/1.0.0 (betasoft.com.tr)',
+            'User-Agent: EczaneAPI-PHP-SDK/1.0.0 (www.betasoft.com.tr)',
         ];
 
         if ($this->apiKey) {

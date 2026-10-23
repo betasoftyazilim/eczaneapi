@@ -13,7 +13,7 @@
     <PackageTags>eczane;nobetci-eczane;turkiye;api;saglik;pharmacy;sdk</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/betasoftyazilim/eczaneapi</RepositoryUrl>
-    <PackageProjectUrl>https://betasoft.com.tr</PackageProjectUrl>
+    <PackageProjectUrl>https://www.betasoft.com.tr</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
