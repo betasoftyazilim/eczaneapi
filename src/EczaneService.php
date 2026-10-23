@@ -10,6 +10,8 @@ use EczaneApi\Contracts\EczaneSourceInterface;
 use EczaneApi\Data\Sehirler;
 use EczaneApi\DTO\EczaneDto;
 use EczaneApi\DTO\SehirDto;
+use EczaneApi\Sources\BelediyeApiSource;
+use EczaneApi\Sources\ChamberScraperSource;
 use EczaneApi\Sources\EDevletSource;
 use EczaneApi\Sources\FallbackApiSource;
 use EczaneApi\Sources\MockSource;
@@ -18,6 +20,8 @@ class EczaneService
 {
     private EczaneSourceInterface $source;
     private CacheInterface $cache;
+    private ?EczaneSourceInterface $belediyeSource;
+    private ?EczaneSourceInterface $chamberSource;
     private ?EczaneSourceInterface $fallbackSource;
     private ?EczaneSourceInterface $mockSource;
     private int $cacheTtl;
@@ -32,6 +36,8 @@ class EczaneService
     ) {
         $this->source = $source ?? new EDevletSource();
         $this->cache = $cache ?? new FileCache(__DIR__ . '/../storage/cache', $cacheTtl);
+        $this->belediyeSource = $enableFallback ? new BelediyeApiSource() : null;
+        $this->chamberSource = $enableFallback ? new ChamberScraperSource() : null;
         $this->fallbackSource = $enableFallback ? new FallbackApiSource() : null;
         $this->mockSource = $enableFallback ? new MockSource() : null;
         $this->cacheTtl = $cacheTtl;
@@ -90,19 +96,29 @@ class EczaneService
         // 2. Adım: Birincil Kaynaktan Çek (e-Devlet)
         $data = $this->source->fetch($resmiAd, $tarih);
 
-        // 3. Adım: e-Devlet başarısız ise ve önbellekte eski veri varsa onu koru
+        // 3. Adım: e-Devlet boş ise Belediye Açık Veri API'sinden çek (İzmir vb.)
+        if (($data === null || empty($data)) && $this->belediyeSource !== null) {
+            $data = $this->belediyeSource->fetch($resmiAd, $tarih);
+        }
+
+        // 4. Adım: Başarısız ise Doğrudan Eczacı Odası Sayfasından çek (Eskişehir, Kayseri vb.)
+        if (($data === null || empty($data)) && $this->chamberSource !== null) {
+            $data = $this->chamberSource->fetch($resmiAd, $tarih);
+        }
+
+        // 5. Adım: Başarısız ise ve önbellekte eski veri varsa onu koru
         if ($data === null || empty($data)) {
             $eskiCache = $this->cache->get($cacheKey);
             if (is_array($eskiCache) && !empty($eskiCache)) {
                 return $this->filtreleIlce($eskiCache, $ilce);
             }
 
-            // 4. Adım: Yedek API kaynağından (TeknikZeka / Açık API) çek
+            // 6. Adım: Yedek Açık API Motorundan çek
             if ($this->fallbackSource !== null) {
                 $data = $this->fallbackSource->fetch($resmiAd, $tarih);
             }
 
-            // 5. Adım: Hâlâ boş ise Mock kaynağa başvur
+            // 7. Adım: Hâlâ boş ise Mock kaynağa başvur
             if (($data === null || empty($data)) && $this->mockSource !== null) {
                 $data = $this->mockSource->fetch($resmiAd, $tarih);
             }
@@ -239,7 +255,17 @@ class EczaneService
             // 1. Önce e-Devlet'ten dene
             $data = $this->source->fetch($sehir['name']);
 
-            // 2. e-Devlet boş dönerse Yedek API kaynağından (TeknikZeka) çek
+            // 2. e-Devlet boş ise Belediye Açık Veri API'sinden çek (İzmir vb.)
+            if (($data === null || empty($data)) && $this->belediyeSource !== null) {
+                $data = $this->belediyeSource->fetch($sehir['name']);
+            }
+
+            // 3. Başarısız ise Doğrudan Eczacı Odası Sayfasından çek (Eskişehir, Kayseri vb.)
+            if (($data === null || empty($data)) && $this->chamberSource !== null) {
+                $data = $this->chamberSource->fetch($sehir['name']);
+            }
+
+            // 4. Hâlâ boş ise Yedek Açık API Motorundan çek
             if (($data === null || empty($data)) && $this->fallbackSource !== null) {
                 $data = $this->fallbackSource->fetch($sehir['name']);
             }

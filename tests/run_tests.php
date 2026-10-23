@@ -137,6 +137,15 @@ assertTest('İstanbul Eczacı Odası tespiti', $istanbulOda !== null && $istanbu
 $antalyaOda = \EczaneApi\Data\SourcesCatalog::findOdaByPlaka(7);
 assertTest('Antalya (07) Eczacı Odası ve XML yetenek tespiti', $antalyaOda !== null && $antalyaOda['xml_destegi'] === true);
 
+// 10. Belediye ve Doğrudan Oda Kaynak Testleri
+$belediyeSource = new \EczaneApi\Sources\BelediyeApiSource();
+$izmirRes = $belediyeSource->fetch('İzmir');
+assertTest('İzmir BB Açık Veri API Nöbetçi Eczane Çekimi', is_array($izmirRes) && count($izmirRes) > 0);
+
+$chamberSource = new \EczaneApi\Sources\ChamberScraperSource();
+$eskRes = $chamberSource->fetch('Eskişehir');
+assertTest('Eskişehir Eczacı Odası Doğrudan Kaynak Çekimi', is_array($eskRes) && count($eskRes) > 0);
+
 echo "\n--------------------------------------------------------\n";
 echo "📊 TEST SONUÇLARI: {$passed} Başarılı | {$failed} Hatalı\n";
 echo "--------------------------------------------------------\n";
