@@ -353,7 +353,8 @@ if ($topluKontrol) {
         <div class="badges">
             <span class="badge badge-success">● e-Devlet TİTCK Aktif</span>
             <span class="badge">Önbellek: <?= count($cacheStats['active_keys'] ?? []) ?> İl</span>
-            <span class="badge badge-warning">PHP <?= PHP_VERSION ?></span>
+            <span class="badge badge-warning">v1.0.2</span>
+            <a href="https://github.com/betasoftyazilim/eczaneapi" target="_blank" rel="noopener noreferrer" class="badge" style="background: rgba(234, 179, 8, 0.15); border-color: rgba(234, 179, 8, 0.5); color: #facc15; text-decoration: none;">⭐ GitHub'da Yıldız Ver</a>
         </div>
     </div>
 </header>
@@ -525,6 +526,13 @@ if ($topluKontrol) {
         </div>
     </div>
 </main>
+
+<footer class="container" style="margin-top: 50px; text-align: center; padding: 30px 20px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 14px;">
+    <p style="margin-bottom: 8px; color: #f8fafc; font-size: 15px;">
+        🌟 <strong>Projeyi beğendiyseniz ve işinize yaradıysa GitHub'da bir yıldız (⭐ Star) vermeyi unutmayın! Destekleriniz için teşekkürler.</strong>
+    </p>
+    <p>Açık Kaynak Kod Deposu: <a href="https://github.com/betasoftyazilim/eczaneapi" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">github.com/betasoftyazilim/eczaneapi</a></p>
+</footer>
 
 </body>
 </html>

@@ -338,3 +338,12 @@ php tests/run_tests.php
 
 ## 📄 Lisans
 Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+
+---
+
+## ⭐ Destek ve Katkı
+
+> **Projeyi beğendiyseniz ve işinize yaradıysa GitHub'da bir yıldız (⭐ Star) vermeyi unutmayın! Destekleriniz için teşekkürler.**
+> 
+> 👉 **[GitHub Deposu: betasoftyazilim/eczaneapi](https://github.com/betasoftyazilim/eczaneapi)**
+
