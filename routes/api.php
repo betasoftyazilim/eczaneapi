@@ -34,6 +34,8 @@ if (class_exists('\Illuminate\Support\Facades\Route')) {
         $router->get('/api/v1/ilceler', [$controller, 'ilceler']);
         $router->get('/api/v1/ilceler/{il}', [$controller, 'ilceler']);
         $router->get('/api/v1/status', [$controller, 'status']);
+        $router->get('/api/v1/sources', [$controller, 'sources']);
+        $router->get('/api/v1/sources/odalar', [$controller, 'odalar']);
         $router->get('/api/v1/geo/lookup', [$controller, 'geoLookup']);
         $router->get('/api/v1/geo/hierarchy', [$controller, 'maxMindHierarchy']);
         $router->post('/api/v1/refresh', [$controller, 'refresh']);

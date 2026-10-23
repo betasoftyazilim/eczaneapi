@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <NobetBilgi>
+        <Tarih>2026-10-23</Tarih>
+        <NobetBaslangic>2026-10-23T08:30:00</NobetBaslangic>
+        <NobetBitis>2026-10-24T08:30:00</NobetBitis>
+        <OdaAdi>1. Bölge İstanbul Eczacı Odası</OdaAdi>
+        <Il>İstanbul</Il>
+        <Ilce>Kadıköy</Ilce>
+        <Plaka>34</Plaka>
+    </NobetBilgi>
+    <url>
+        <EczaneAd>MODA ECZANESİ</EczaneAd>
+        <EczaneTelefon>02163456789</EczaneTelefon>
+        <EczaneAdres>Caferağa Mah. Moda Cad. No:18/A</EczaneAdres>
+        <EczaneBolge>Kadıköy</EczaneBolge>
+        <EczaneIlce>Kadıköy</EczaneIlce>
+        <EczaneIl>İstanbul</EczaneIl>
+        <EczaneEnlem>40.987654</EczaneEnlem>
+        <EczaneBoylam>29.028912</EczaneBoylam>
+        <EczaneGLN>8680001340003</EczaneGLN>
+        <NobetBaslangic>23/10/2026 08:30</NobetBaslangic>
+        <NobetBitis>24/10/2026 08:30</NobetBitis>
+    </url>
+    <url>
+        <EczaneAd>BAĞDAT ECZANESİ</EczaneAd>
+        <EczaneTelefon>02163601234</EczaneTelefon>
+        <EczaneAdres>Bağdat Cad. No:245/1</EczaneAdres>
+        <EczaneBolge>Kadıköy</EczaneBolge>
+        <EczaneIlce>Kadıköy</EczaneIlce>
+        <EczaneIl>İstanbul</EczaneIl>
+        <EczaneEnlem>40.965412</EczaneEnlem>
+        <EczaneBoylam>29.065412</EczaneBoylam>
+        <EczaneGLN>8680001340004</EczaneGLN>
+        <NobetBaslangic>23/10/2026 08:30</NobetBaslangic>
+        <NobetBitis>24/10/2026 08:30</NobetBitis>
+    </url>
+</urlset>

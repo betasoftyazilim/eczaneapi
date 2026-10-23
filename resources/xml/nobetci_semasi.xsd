@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="urlset">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="NobetBilgi" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Tarih" type="xs:string" minOccurs="0"/>
+                            <xs:element name="NobetBaslangic" type="xs:string"/>
+                            <xs:element name="NobetBitis" type="xs:string"/>
+                            <xs:element name="OdaAdi" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Il" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Ilce" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Plaka" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="url" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="EczaneAd" type="xs:string"/>
+                            <xs:element name="EczaneTelefon" type="xs:string"/>
+                            <xs:element name="EczaneAdres" type="xs:string"/>
+                            <xs:element name="EczaneBolge" type="xs:string" minOccurs="0"/>
+                            <xs:element name="EczaneIlce" type="xs:string" minOccurs="0"/>
+                            <xs:element name="EczaneIl" type="xs:string" minOccurs="0"/>
+                            <xs:element name="EczaneEnlem" type="xs:string" minOccurs="0"/>
+                            <xs:element name="EczaneBoylam" type="xs:string" minOccurs="0"/>
+                            <xs:element name="EczaneGLN" type="xs:string" minOccurs="0"/>
+                            <xs:element name="NobetBaslangic" type="xs:string" minOccurs="0"/>
+                            <xs:element name="NobetBitis" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

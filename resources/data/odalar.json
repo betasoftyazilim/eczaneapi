@@ -1,0 +1,548 @@
+{
+  "aciklama": "Türkiye 54 Bölge Eczacı Odası ve 81 İl Resmi Nöbetçi Eczane Kaynak Rehberi",
+  "toplam_oda": 54,
+  "toplam_il": 81,
+  "odalar": [
+    {
+      "bolge_no": 1,
+      "oda_adi": "İstanbul Eczacı Odası",
+      "iller": ["İstanbul"],
+      "plakalar": [34],
+      "web_sitesi": "https://www.istanbuleczaciodasi.org.tr",
+      "nobet_linki": "https://www.istanbuleczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML / Mobil Uygulama",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 2,
+      "oda_adi": "Ankara Eczacı Odası",
+      "iller": ["Ankara", "Kırıkkale"],
+      "plakalar": [6, 71],
+      "web_sitesi": "https://www.aeo.org.tr",
+      "nobet_linki": "https://www.aeo.org.tr/NobetciEczaneler",
+      "servis_tipi": "HTML / Web Portalı",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 3,
+      "oda_adi": "İzmir Eczacı Odası",
+      "iller": ["İzmir"],
+      "plakalar": [35],
+      "web_sitesi": "https://www.izmireczaciodasi.org.tr",
+      "nobet_linki": "https://www.izmireczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML / İzmir BB Açık Veri Portalı (JSON)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 4,
+      "oda_adi": "Adana Eczacı Odası",
+      "iller": ["Adana"],
+      "plakalar": [1],
+      "web_sitesi": "https://www.adanaeo.org.tr",
+      "nobet_linki": "https://www.adanaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 5,
+      "oda_adi": "Konya Eczacı Odası",
+      "iller": ["Konya", "Karaman"],
+      "plakalar": [42, 70],
+      "web_sitesi": "https://www.konyaeo.org.tr",
+      "nobet_linki": "https://www.konyaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML / Özel Kurumsal Entegrasyon",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 6,
+      "oda_adi": "Samsun Eczacı Odası",
+      "iller": ["Samsun", "Sinop"],
+      "plakalar": [55, 57],
+      "web_sitesi": "https://www.samsuneczaciodasi.org.tr",
+      "nobet_linki": "https://www.samsuneczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 7,
+      "oda_adi": "Bursa Eczacı Odası",
+      "iller": ["Bursa", "Yalova"],
+      "plakalar": [16, 77],
+      "web_sitesi": "https://www.beo.org.tr",
+      "nobet_linki": "https://www.beo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 8,
+      "oda_adi": "Gaziantep Eczacı Odası",
+      "iller": ["Gaziantep", "Kilis"],
+      "plakalar": [27, 79],
+      "web_sitesi": "https://www.gaziantepeo.org.tr",
+      "nobet_linki": "https://www.gaziantepeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "Tokenli API (/api/) & HTML",
+      "xml_destegi": false,
+      "api_destegi": true
+    },
+    {
+      "bolge_no": 9,
+      "oda_adi": "Eskişehir Eczacı Odası",
+      "iller": ["Eskişehir", "Bilecik"],
+      "plakalar": [26, 11],
+      "web_sitesi": "https://www.eskisehireo.org.tr",
+      "nobet_linki": "https://www.eskisehireo.org.tr/eskisehir-nobetci-eczaneler",
+      "servis_tipi": "Canlı HTML Tablosu (e-Devlet boş / doğrudan çekilir)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 10,
+      "oda_adi": "Antalya Eczacı Odası",
+      "iller": ["Antalya"],
+      "plakalar": [7],
+      "web_sitesi": "https://www.antalyaeo.org.tr",
+      "nobet_linki": "https://www.antalyaeo.org.tr/nobetcieczaneler.xml",
+      "servis_tipi": "Şifreli XML API (Kullanıcı Adı/Şifre ile)",
+      "xml_destegi": true
+    },
+    {
+      "bolge_no": 11,
+      "oda_adi": "Diyarbakır Eczacı Odası",
+      "iller": ["Diyarbakır"],
+      "plakalar": [21],
+      "web_sitesi": "https://www.diyarbakireczaciodasi.org.tr",
+      "nobet_linki": "https://www.diyarbakireczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 12,
+      "oda_adi": "Kayseri Eczacı Odası",
+      "iller": ["Kayseri"],
+      "plakalar": [38],
+      "web_sitesi": "https://www.kayserieo.org.tr",
+      "nobet_linki": "https://www.kayserieo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "Canlı HTML Kartları & Kayseri CBS (e-Devlet boş / doğrudan çekilir)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 13,
+      "oda_adi": "Erzurum Eczacı Odası",
+      "iller": ["Erzurum", "Ağrı", "Ardahan", "Bayburt", "Erzincan", "Iğdır", "Kars"],
+      "plakalar": [25, 4, 75, 69, 24, 76, 36],
+      "web_sitesi": "https://www.erzurumeo.org.tr",
+      "nobet_linki": "https://www.erzurumeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 14,
+      "oda_adi": "Kahramanmaraş Eczacı Odası",
+      "iller": ["Kahramanmaraş"],
+      "plakalar": [46],
+      "web_sitesi": "https://www.maraseo.org.tr",
+      "nobet_linki": "https://www.maraseo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 15,
+      "oda_adi": "Isparta Eczacı Odası",
+      "iller": ["Isparta", "Burdur"],
+      "plakalar": [32, 15],
+      "web_sitesi": "https://www.ispartaeo.org.tr",
+      "nobet_linki": "https://www.ispartaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 16,
+      "oda_adi": "Denizli Eczacı Odası",
+      "iller": ["Denizli"],
+      "plakalar": [20],
+      "web_sitesi": "https://www.denizlieczaciodasi.org.tr",
+      "nobet_linki": "https://www.denizlieczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 17,
+      "oda_adi": "Zonguldak Eczacı Odası",
+      "iller": ["Zonguldak", "Bartın", "Karabük"],
+      "plakalar": [67, 74, 78],
+      "web_sitesi": "https://www.zeo.org.tr",
+      "nobet_linki": "https://www.zeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 18,
+      "oda_adi": "Trabzon Eczacı Odası",
+      "iller": ["Trabzon", "Artvin", "Giresun", "Gümüşhane", "Rize"],
+      "plakalar": [61, 8, 28, 29, 53],
+      "web_sitesi": "https://www.trabzoneczaciodasi.org.tr",
+      "nobet_linki": "https://www.trabzoneczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 19,
+      "oda_adi": "Tekirdağ Eczacı Odası",
+      "iller": ["Tekirdağ"],
+      "plakalar": [59],
+      "web_sitesi": "https://www.tekirdageo.org.tr",
+      "nobet_linki": "https://www.tekirdageo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 20,
+      "oda_adi": "Sakarya Eczacı Odası",
+      "iller": ["Sakarya", "Düzce"],
+      "plakalar": [54, 81],
+      "web_sitesi": "https://www.sakaryaeo.org.tr",
+      "nobet_linki": "https://www.sakaryaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 21,
+      "oda_adi": "Aydın Eczacı Odası",
+      "iller": ["Aydın"],
+      "plakalar": [9],
+      "web_sitesi": "https://www.aydineczaciodasi.org.tr",
+      "nobet_linki": "https://www.aydineczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "Canlı HTML Tablosu (e-Devlet boş / doğrudan çekilir)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 22,
+      "oda_adi": "Malatya Eczacı Odası",
+      "iller": ["Malatya"],
+      "plakalar": [44],
+      "web_sitesi": "https://www.malatyaeczaciodasi.org.tr",
+      "nobet_linki": "https://www.malatyaeczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "Canlı HTML Blokları (e-Devlet boş / doğrudan çekilir)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 23,
+      "oda_adi": "Elazığ Eczacı Odası",
+      "iller": ["Elazığ", "Bingöl", "Tunceli"],
+      "plakalar": [23, 12, 62],
+      "web_sitesi": "https://www.elazigeczaciodasi.org.tr",
+      "nobet_linki": "https://www.elazigeczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "Canlı HTML Formu (e-Devlet boş / doğrudan çekilir)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 24,
+      "oda_adi": "Ordu Eczacı Odası",
+      "iller": ["Ordu"],
+      "plakalar": [52],
+      "web_sitesi": "https://www.ordueczaciodasi.org.tr",
+      "nobet_linki": "https://www.ordueczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 25,
+      "oda_adi": "Mersin Eczacı Odası",
+      "iller": ["Mersin"],
+      "plakalar": [33],
+      "web_sitesi": "https://www.mersineo.org.tr",
+      "nobet_linki": "https://www.mersineo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML / Özel Entegrasyon",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 26,
+      "oda_adi": "Kastamonu Eczacı Odası",
+      "iller": ["Kastamonu", "Çankırı"],
+      "plakalar": [37, 18],
+      "web_sitesi": "https://www.kastamonueczaciodasi.org.tr",
+      "nobet_linki": "https://www.kastamonueczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 27,
+      "oda_adi": "Şanlıurfa Eczacı Odası",
+      "iller": ["Şanlıurfa"],
+      "plakalar": [63],
+      "web_sitesi": "https://www.urfaeo.org.tr",
+      "nobet_linki": "https://www.urfaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 28,
+      "oda_adi": "Hatay Eczacı Odası",
+      "iller": ["Hatay"],
+      "plakalar": [31],
+      "web_sitesi": "https://www.hatayeo.org.tr",
+      "nobet_linki": "https://www.hatayeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 29,
+      "oda_adi": "Manisa Eczacı Odası",
+      "iller": ["Manisa"],
+      "plakalar": [45],
+      "web_sitesi": "https://www.manisaeo.org.tr",
+      "nobet_linki": "https://www.manisaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 30,
+      "oda_adi": "Balıkesir Eczacı Odası",
+      "iller": ["Balıkesir"],
+      "plakalar": [10],
+      "web_sitesi": "https://www.balikesireo.org.tr",
+      "nobet_linki": "https://www.balikesireo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 31,
+      "oda_adi": "Kocaeli Eczacı Odası",
+      "iller": ["Kocaeli"],
+      "plakalar": [41],
+      "web_sitesi": "https://www.kocaelieo.org.tr",
+      "nobet_linki": "https://www.kocaelieo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 32,
+      "oda_adi": "Muğla Eczacı Odası",
+      "iller": ["Muğla"],
+      "plakalar": [48],
+      "web_sitesi": "https://www.muglaeczaciodasi.org.tr",
+      "nobet_linki": "https://www.muglaeczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 33,
+      "oda_adi": "Afyonkarahisar Eczacı Odası",
+      "iller": ["Afyonkarahisar"],
+      "plakalar": [3],
+      "web_sitesi": "https://www.afyoneo.org.tr",
+      "nobet_linki": "https://www.afyoneo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 34,
+      "oda_adi": "Aksaray Eczacı Odası",
+      "iller": ["Aksaray"],
+      "plakalar": [68],
+      "web_sitesi": "https://www.aksarayeo.org.tr",
+      "nobet_linki": "https://www.aksarayeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 35,
+      "oda_adi": "Kütahya Eczacı Odası",
+      "iller": ["Kütahya"],
+      "plakalar": [43],
+      "web_sitesi": "https://www.kutahyaeo.org.tr",
+      "nobet_linki": "https://www.kutahyaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 36,
+      "oda_adi": "Çanakkale Eczacı Odası",
+      "iller": ["Çanakkale"],
+      "plakalar": [17],
+      "web_sitesi": "https://www.canakkaleeo.org.tr",
+      "nobet_linki": "https://www.canakkaleeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 37,
+      "oda_adi": "Sivas Eczacı Odası",
+      "iller": ["Sivas"],
+      "plakalar": [58],
+      "web_sitesi": "https://www.sivaseo.org.tr",
+      "nobet_linki": "https://www.sivaseo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 38,
+      "oda_adi": "Van Eczacı Odası",
+      "iller": ["Van", "Bitlis", "Hakkari", "Muş"],
+      "plakalar": [65, 13, 30, 49],
+      "web_sitesi": "https://www.vaneczaciodasi.org.tr",
+      "nobet_linki": "https://www.vaneczaciodasi.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML (e-Devlet Hakkari/Muş boş / yedek API ile çözülür)",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 39,
+      "oda_adi": "Edirne Eczacı Odası",
+      "iller": ["Edirne", "Kırklareli"],
+      "plakalar": [22, 39],
+      "web_sitesi": "https://www.edirneeo.org.tr",
+      "nobet_linki": "https://www.edirneeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 40,
+      "oda_adi": "Kırşehir Eczacı Odası",
+      "iller": ["Kırşehir", "Nevşehir"],
+      "plakalar": [40, 50],
+      "web_sitesi": "https://www.kirsehireo.org.tr",
+      "nobet_linki": "https://www.kirsehireo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 41,
+      "oda_adi": "Tokat Eczacı Odası",
+      "iller": ["Tokat"],
+      "plakalar": [60],
+      "web_sitesi": "https://www.tokateo.org.tr",
+      "nobet_linki": "https://www.tokateo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 42,
+      "oda_adi": "Giresun Eczacı Odası",
+      "iller": ["Giresun"],
+      "plakalar": [28],
+      "web_sitesi": "https://www.giresuneo.org.tr",
+      "nobet_linki": "https://www.giresuneo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 43,
+      "oda_adi": "Mardin Eczacı Odası",
+      "iller": ["Mardin", "Şırnak"],
+      "plakalar": [47, 73],
+      "web_sitesi": "https://www.mardineo.org.tr",
+      "nobet_linki": "https://www.mardineo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 44,
+      "oda_adi": "Batman Eczacı Odası",
+      "iller": ["Batman", "Siirt"],
+      "plakalar": [72, 56],
+      "web_sitesi": "https://www.batmaneo.org.tr",
+      "nobet_linki": "https://www.batmaneo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 45,
+      "oda_adi": "Çorum Eczacı Odası",
+      "iller": ["Çorum"],
+      "plakalar": [19],
+      "web_sitesi": "https://www.corumeo.org.tr",
+      "nobet_linki": "https://www.corumeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 46,
+      "oda_adi": "Uşak Eczacı Odası",
+      "iller": ["Uşak"],
+      "plakalar": [64],
+      "web_sitesi": "https://www.usakeo.org.tr",
+      "nobet_linki": "https://www.usakeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 47,
+      "oda_adi": "Amasya Eczacı Odası",
+      "iller": ["Amasya"],
+      "plakalar": [5],
+      "web_sitesi": "https://www.amasyaeo.org.tr",
+      "nobet_linki": "https://www.amasyaeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 48,
+      "oda_adi": "Osmaniye Eczacı Odası",
+      "iller": ["Osmaniye"],
+      "plakalar": [80],
+      "web_sitesi": "https://www.osmaniyeeo.org.tr",
+      "nobet_linki": "https://www.osmaniyeeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 49,
+      "oda_adi": "Yozgat Eczacı Odası",
+      "iller": ["Yozgat"],
+      "plakalar": [66],
+      "web_sitesi": "https://www.yozgateo.org.tr",
+      "nobet_linki": "https://www.yozgateo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 50,
+      "oda_adi": "Karaman Eczacı Odası",
+      "iller": ["Karaman"],
+      "plakalar": [70],
+      "web_sitesi": "https://www.karamaneo.org.tr",
+      "nobet_linki": "https://www.karamaneo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 51,
+      "oda_adi": "Adıyaman Eczacı Odası",
+      "iller": ["Adıyaman"],
+      "plakalar": [2],
+      "web_sitesi": "https://www.adiyamaneo.org.tr",
+      "nobet_linki": "https://www.adiyamaneo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 52,
+      "oda_adi": "Nevşehir Eczacı Odası",
+      "iller": ["Nevşehir"],
+      "plakalar": [50],
+      "web_sitesi": "https://www.nevsehireo.org.tr",
+      "nobet_linki": "https://www.nevsehireo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 53,
+      "oda_adi": "Niğde Eczacı Odası",
+      "iller": ["Niğde"],
+      "plakalar": [51],
+      "web_sitesi": "https://www.nigdeeo.org.tr",
+      "nobet_linki": "https://www.nigdeeo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    },
+    {
+      "bolge_no": 54,
+      "oda_adi": "Burdur Eczacı Odası",
+      "iller": ["Burdur"],
+      "plakalar": [15],
+      "web_sitesi": "https://www.burdureo.org.tr",
+      "nobet_linki": "https://www.burdureo.org.tr/nobetci-eczaneler",
+      "servis_tipi": "HTML",
+      "xml_destegi": false
+    }
+  ]
+}

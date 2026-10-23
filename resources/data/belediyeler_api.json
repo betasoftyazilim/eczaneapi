@@ -1,0 +1,37 @@
+{
+  "aciklama": "Türkiye Geneli Nöbetçi Eczane Açık Veri Portalları ve Belediye API Kaynakları",
+  "belediyeler": [
+    {
+      "sehir": "İzmir",
+      "kurum": "İzmir Büyükşehir Belediyesi",
+      "portal": "İzmir Açık Veri Portalı",
+      "url": "https://acikveri.bizizmir.com",
+      "veri_formati": "JSON / CSV / REST API",
+      "kapsam": "İzmir geneli nöbetçi eczaneler, koordinat, adres ve telefon"
+    },
+    {
+      "sehir": "İstanbul",
+      "kurum": "İstanbul Büyükşehir Belediyesi",
+      "portal": "İBB Açık Veri Portalı",
+      "url": "https://data.ibb.gov.tr",
+      "veri_formati": "JSON / REST API",
+      "kapsam": "İstanbul sağlık ve eczane noktaları"
+    },
+    {
+      "sehir": "Kayseri",
+      "kurum": "Kayseri Büyükşehir Belediyesi",
+      "portal": "Kayseri CBS (Coğrafi Bilgi Sistemi)",
+      "url": "https://cbs.kayseri.bel.tr",
+      "veri_formati": "CBS Harita Servisi",
+      "kapsam": "Kayseri nöbetçi eczaneleri ve konumları"
+    },
+    {
+      "sehir": "Konya",
+      "kurum": "Konya Büyükşehir Belediyesi",
+      "portal": "Konya Açık Veri Portalı",
+      "url": "https://acikveri.konya.bel.tr",
+      "veri_formati": "REST API / JSON",
+      "kapsam": "Konya nöbetçi eczane ve sağlık lokasyonları"
+    }
+  ]
+}

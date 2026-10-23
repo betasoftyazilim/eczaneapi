@@ -122,6 +122,47 @@ class EczaneController
      }
 
     /**
+     * Tüm veri kaynakları kataloğu (e-Devlet, Fallback, MaxMind, Odalar, Belediyeler)
+     * GET /api/v1/sources
+     */
+    public function sources(Request $request): Response
+    {
+        $sources = \EczaneApi\Data\SourcesCatalog::getSources();
+        $belediyeler = \EczaneApi\Data\SourcesCatalog::getBelediyeler();
+
+        return Response::api(ApiResponse::success(
+            data: [
+                'sources' => $sources,
+                'belediyeler' => $belediyeler,
+                'odalar_sayisi' => count(\EczaneApi\Data\SourcesCatalog::getOdalar()),
+            ],
+            message: 'Tüm veri kaynakları ve servisler listelendi.'
+        ));
+    }
+
+    /**
+     * 54 Bölge Eczacı Odası ve 81 il kaynak rehberi
+     * GET /api/v1/sources/odalar
+     */
+    public function odalar(Request $request): Response
+    {
+        $il = $request->input('il');
+        if ($il !== null && $il !== '') {
+            $oda = \EczaneApi\Data\SourcesCatalog::findOdaByCity((string) $il);
+            return Response::api(ApiResponse::success(
+                data: $oda,
+                message: "'{$il}' için bağlı Eczacı Odası kaynağı."
+            ));
+        }
+
+        $odalar = \EczaneApi\Data\SourcesCatalog::getOdalar();
+        return Response::api(ApiResponse::success(
+            data: $odalar,
+            message: count($odalar) . ' Bölge Eczacı Odası kaynağı listelendi.'
+        ));
+    }
+
+    /**
      * 81 ili listeler
      * GET /api/v1/iller
      */

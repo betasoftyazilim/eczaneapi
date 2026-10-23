@@ -124,6 +124,19 @@ assertTest('Input Null-Byte Temizleme', $nullByteReq->input('test') === 'guvenli
 $secHeadersRes = \EczaneApi\Http\Response::json(['ok' => true]);
 assertTest('Response Nesnesi Başarıyla Üretildi', $secHeadersRes instanceof \EczaneApi\Http\Response);
 
+// 9. Resources ve Kaynak Kataloğu Testleri
+$sources = \EczaneApi\Data\SourcesCatalog::getSources();
+assertTest('resources/data/sources.json yüklendi', isset($sources['primary_source']['name']));
+
+$odalar = \EczaneApi\Data\SourcesCatalog::getOdalar();
+assertTest('54 Eczacı Odası eksiksiz tanımlı', count($odalar) === 54);
+
+$istanbulOda = \EczaneApi\Data\SourcesCatalog::findOdaByCity('İstanbul');
+assertTest('İstanbul Eczacı Odası tespiti', $istanbulOda !== null && $istanbulOda['bolge_no'] === 1);
+
+$antalyaOda = \EczaneApi\Data\SourcesCatalog::findOdaByPlaka(7);
+assertTest('Antalya (07) Eczacı Odası ve XML yetenek tespiti', $antalyaOda !== null && $antalyaOda['xml_destegi'] === true);
+
 echo "\n--------------------------------------------------------\n";
 echo "📊 TEST SONUÇLARI: {$passed} Başarılı | {$failed} Hatalı\n";
 echo "--------------------------------------------------------\n";

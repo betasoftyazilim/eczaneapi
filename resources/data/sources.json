@@ -1,0 +1,58 @@
+{
+  "project": "Eczane API (betasoftyazilim/eczaneapi)",
+  "version": "1.0.1",
+  "description": "Türkiye 81 İl ve 973 İlçesi İçin Nöbetçi Eczane ve Eczacı Odaları Veri Kaynakları Merkezi Kataloğu",
+  "updated_at": "2026-10-23T23:58:00+03:00",
+  "primary_source": {
+    "name": "e-Devlet TİTCK Nöbetçi Eczane Sorgulama",
+    "provider": "T.C. Sağlık Bakanlığı Türkiye İlaç ve Tıbbi Cihaz Kurumu",
+    "url": "https://www.turkiye.gov.tr/saglik-titck-nobetci-eczane-sorgulama",
+    "submit_url": "https://www.turkiye.gov.tr/saglik-titck-nobetci-eczane-sorgulama?submit",
+    "type": "Scraper / Web Service",
+    "format": "HTML / XPath",
+    "coverage_provinces": 71,
+    "status": "Aktif / Canlı",
+    "class": "EczaneApi\\Sources\\EDevletSource"
+  },
+  "fallback_source": {
+    "name": "Canlı Oda ve Açık Eczane API Motoru",
+    "provider": "Bölge Eczacı Odaları ve Açık API Ağı",
+    "endpoint": "https://api.teknikzeka.net/eczane/api.php?islem=nobetci&il=",
+    "type": "REST API",
+    "format": "JSON",
+    "coverage_provinces": 10,
+    "missing_covered": [
+      "Artvin (08)",
+      "Aydın (09)",
+      "Elazığ (23)",
+      "Eskişehir (26)",
+      "Hakkari (30)",
+      "Kayseri (38)",
+      "Kırşehir (40)",
+      "Malatya (44)",
+      "Muş (49)",
+      "Kilis (79)"
+    ],
+    "status": "Aktif / Canlı",
+    "class": "EczaneApi\\Sources\\FallbackApiSource"
+  },
+  "geo_source": {
+    "name": "MaxMind GeoLite2 City Veritabanı",
+    "provider": "WP-Statistics Açık CDN & MaxMind",
+    "cdn_urls": [
+      "https://raw.githubusercontent.com/wp-statistics/GeoLite2-City/master/GeoLite2-City.mmdb",
+      "https://cdn.jsdelivr.net/gh/wp-statistics/GeoLite2-City@master/GeoLite2-City.mmdb"
+    ],
+    "local_path": "storage/geoip/GeoLite2-City.mmdb",
+    "iso_mapping": "ISO 3166-2:TR (TR-01 - TR-81)",
+    "status": "Aktif / Otomatik Güncellenir",
+    "class": "EczaneApi\\Geo\\MaxMindGeoService"
+  },
+  "cache_layer": {
+    "driver": "FileCache",
+    "storage_dir": "storage/cache",
+    "default_ttl_seconds": 21600,
+    "security": ".htaccess Deny from all ve index.html korumalı",
+    "class": "EczaneApi\\Cache\\FileCache"
+  }
+}
