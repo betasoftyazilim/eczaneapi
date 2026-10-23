@@ -1,0 +1,44 @@
+name: Release npm (Node.js & TypeScript SDK)
+
+on:
+  push:
+    tags:
+      - 'npm-v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Build & Publish to npm
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: npm
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run Build & Tests
+        run: |
+          npm run build
+          npm test
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Node.js SDK ${{ github.ref_name }}"
+          body_path: npm/CHANGELOG.md

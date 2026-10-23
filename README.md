@@ -19,18 +19,48 @@ Ayrıca **MaxMind GeoIP** ve **WP-Statistics** açık kaynak GeoLite2 altyapıs�
 
 ---
 
-## 📦 Kurulum
+---
 
-### Seçenek 1: Composer ile Projenize Ekleme
-```bash
-composer require eczane/api
+## 📦 SDK ve Kütüphane Kurulumları
+
+Projenizi hangi dille geliştiriyorsanız doğrudan ilgili resmi istemci paketini kullanabilirsiniz:
+
+| Platform / Dil | Paket Yöneticisi | Kurulum Komutu | Dizin |
+| :--- | :--- | :--- | :--- |
+| **PHP (Composer)** | Packagist | `composer require betasoft/eczaneapi` | `./` |
+| **Python (PyPI)** | pip | `pip install eczaneapi` | [`pypi/`](./pypi) |
+| **Node.js / TS (npm)** | npm / yarn / pnpm | `npm install eczaneapi` | [`npm/`](./npm) |
+| **.NET / C# (NuGet)** | dotnet CLI | `dotnet add package EczaneApi` | [`dotnet/`](./dotnet) |
+
+---
+
+### 🐍 Python (PyPI) Hızlı Kullanım
+```python
+from eczaneapi import Eczane
+
+# İstanbul Kadıköy nöbetçi eczaneleri
+eczaneler = Eczane.nobetci("istanbul", "kadikoy")
+for e in eczaneler:
+    print(f"{e.adi} | Tel: {e.telefon} | Adres: {e.adres}")
 ```
 
-### Seçenek 2: Kendi Başına (Standalone / Klonlayarak) Kurulum
-```bash
-git clone https://github.com/kullaniciadi/eczane-api.git
-cd eczane-api
-composer install --no-dev
+### 🟩 Node.js & TypeScript (npm) Hızlı Kullanım
+```typescript
+import { Eczane } from "eczaneapi";
+
+const eczaneler = await Eczane.nobetci("istanbul", "kadikoy");
+console.log(eczaneler);
+```
+
+### 🔷 .NET / C# (NuGet) Hızlı Kullanım
+```csharp
+using EczaneApi;
+
+var eczaneler = await Eczane.NobetciAsync("istanbul", "kadikoy");
+foreach (var e in eczaneler)
+{
+    Console.WriteLine($"{e.Adi} - {e.Telefon}");
+}
 ```
 
 ---

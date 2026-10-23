@@ -1,0 +1,38 @@
+{
+  "name": "eczaneapi",
+  "version": "1.0.0",
+  "description": "Türkiye 81 İl ve 973 İlçesi İçin Resmi ve Güncel Nöbetçi Eczane API Node.js/TypeScript İstemcisi",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "eczane",
+    "nobetci-eczane",
+    "turkiye",
+    "api",
+    "saglik",
+    "pharmacy",
+    "sdk"
+  ],
+  "author": "BetaSoft Yazılım <betasoftyazilim@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/betasoftyazilim/eczaneapi.git",
+    "directory": "npm"
+  },
+  "bugs": {
+    "url": "https://github.com/betasoftyazilim/eczaneapi/issues"
+  },
+  "homepage": "https://github.com/betasoftyazilim/eczaneapi#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

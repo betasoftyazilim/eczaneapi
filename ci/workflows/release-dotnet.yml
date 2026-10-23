@@ -1,0 +1,43 @@
+name: Release .NET (NuGet SDK)
+
+on:
+  push:
+    tags:
+      - 'dotnet-v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Build & Publish to NuGet
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore dotnet/src/EczaneApi/EczaneApi.csproj
+
+      - name: Run Tests
+        run: dotnet test dotnet/tests/EczaneApi.Tests/EczaneApi.Tests.csproj -c Release
+
+      - name: Pack NuGet Package
+        run: dotnet pack dotnet/src/EczaneApi/EczaneApi.csproj -c Release -o dotnet/nupkg
+
+      - name: Push to NuGet
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          dotnet nuget push dotnet/nupkg/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ".NET SDK ${{ github.ref_name }}"
+          body_path: dotnet/CHANGELOG.md
+          files: dotnet/nupkg/*.nupkg

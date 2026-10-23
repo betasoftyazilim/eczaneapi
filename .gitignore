@@ -7,3 +7,12 @@
 composer.lock
 .phpunit.result.cache
 .env
+
+# SDKs & Packages
+**/node_modules/
+**/__pycache__/
+**/*.egg-info/
+**/*.pyc
+**/bin/
+**/obj/
+**/nupkg/

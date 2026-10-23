@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eczaneapi"
+version = "1.0.0"
+authors = [
+  { name="BetaSoft Yazılım", email="betasoftyazilim@gmail.com" },
+]
+description = "Türkiye 81 İl ve 973 İlçesi İçin Resmi ve Güncel Nöbetçi Eczane API Python İstemcisi"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+keywords = ["eczane", "nobetci-eczane", "turkiye", "api", "saglik", "titck", "belediye"]
+
+[project.urls]
+"Homepage" = "https://github.com/betasoftyazilim/eczaneapi"
+"Bug Tracker" = "https://github.com/betasoftyazilim/eczaneapi/issues"
+"Source" = "https://github.com/betasoftyazilim/eczaneapi"
