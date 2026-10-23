@@ -1,4 +1,4 @@
-# 📊 Türkiye Nöbetçi Eczane Canlı Durum ve Tam Çözüm Raporu (v1.0.2)
+# 📊 Türkiye Nöbetçi Eczane Canlı Durum ve Tam Çözüm Raporu (v1.1.0)
 
 Bu rapor, resmi **e-Devlet TİTCK**, **Belediye Açık Veri API'leri**, **Bölge Eczacı Odaları Doğrudan Web Kazıyıcıları** ve **Açık Eczane API Motoru** üzerinden **81 ilin tamamı tek tek canlı taranarak** güncellenmiştir.
 
@@ -6,7 +6,7 @@ Bu rapor, resmi **e-Devlet TİTCK**, **Belediye Açık Veri API'leri**, **Bölge
 
 ## 📈 1. Genel Başarı ve Kapsama Tablosu
 
-| Metrik | e-Devlet Yalnızca | Yeni 4 Kademeli Öncelik Zinciri (v1.0.2) | Durum |
+| Metrik | e-Devlet Yalnızca | Yeni 4 Kademeli Öncelik Zinciri (v1.1.0) | Durum |
 | :--- | :---: | :---: | :--- |
 | **Toplam İl Sayısı** | **81** | **81** | Türkiye geneli eksiksiz |
 | **Toplam Resmi İlçe Sayısı** | **973** | **973** | Eksiksiz tanımlı |

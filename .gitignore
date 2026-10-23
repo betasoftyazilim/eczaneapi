@@ -16,3 +16,6 @@ composer.lock
 **/bin/
 **/obj/
 **/nupkg/
+**/dist/
+*.tgz
+/release-assets/
