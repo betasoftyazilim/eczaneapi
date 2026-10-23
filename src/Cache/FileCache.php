@@ -17,7 +17,17 @@ class FileCache implements CacheInterface
         $this->defaultTtl = $defaultTtl;
 
         if (!is_dir($this->storageDir)) {
-            @mkdir($this->storageDir, 0775, true);
+            @mkdir($this->storageDir, 0750, true);
+        }
+
+        // Web erişimine karşı dizini koru
+        $htaccess = $this->storageDir . DIRECTORY_SEPARATOR . '.htaccess';
+        if (!file_exists($htaccess)) {
+            @file_put_contents($htaccess, "<IfModule !mod_authz_core.c>\nOrder deny,allow\nDeny from all\n</IfModule>\n<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n");
+        }
+        $indexHtml = $this->storageDir . DIRECTORY_SEPARATOR . 'index.html';
+        if (!file_exists($indexHtml)) {
+            @file_put_contents($indexHtml, "<!DOCTYPE html><html><head><title>Access Denied</title></head><body>Forbidden</body></html>");
         }
     }
 
@@ -132,7 +142,11 @@ class FileCache implements CacheInterface
 
     private function getFilePath(string $key): string
     {
-        $safeKey = preg_replace('/[^a-zA-Z0-9_-]/', '_', $key);
+        $clean = trim((string) preg_replace('/[^a-zA-Z0-9_-]/', '_', $key), '_');
+        $safeKey = ($clean !== '')
+            ? (strlen($clean) > 60 ? substr($clean, 0, 40) . '_' . md5($key) : $clean)
+            : md5($key);
+
         return $this->storageDir . DIRECTORY_SEPARATOR . $safeKey . '.cache.json';
     }
 }

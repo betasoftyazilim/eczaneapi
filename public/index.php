@@ -44,9 +44,21 @@ if (str_starts_with($path, '/api/') || $request->input('format') === 'json' || $
 }
 
 // 2. WEB ARAYÜZÜ: Canlı Nöbetçi Eczane ve Çekilemeyen İller İnceleme Paneli
-$secilenIl = (string) $request->input('il', 'İstanbul');
-$secilenIlce = $request->input('ilce') ? (string) $request->input('ilce') : '';
-$secilenTarih = $request->input('tarih') ? (string) $request->input('tarih') : date('Y-m-d');
+if (!headers_sent()) {
+    header('X-Content-Type-Options: nosniff');
+    header('X-Frame-Options: SAMEORIGIN');
+    header('X-XSS-Protection: 1; mode=block');
+    header('Referrer-Policy: strict-origin-when-cross-origin');
+}
+
+$rawIl = (string) $request->input('il', 'İstanbul');
+$secilenIl = mb_substr(preg_replace('/[\x00-\x1F\x7F]/u', '', trim($rawIl)), 0, 50, 'UTF-8') ?: 'İstanbul';
+
+$rawIlce = (string) ($request->input('ilce') ?: '');
+$secilenIlce = mb_substr(preg_replace('/[\x00-\x1F\x7F]/u', '', trim($rawIlce)), 0, 50, 'UTF-8');
+
+$rawTarih = (string) ($request->input('tarih') ?: date('Y-m-d'));
+$secilenTarih = preg_match('/^\d{4}-\d{2}-\d{2}$/', $rawTarih) ? $rawTarih : date('Y-m-d');
 $forceRefresh = (bool) $request->input('refresh', false);
 
 $iller = Sehirler::all();

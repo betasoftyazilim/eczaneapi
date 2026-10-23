@@ -50,7 +50,17 @@ class MaxMindGeoService
 
         $targetDir = dirname($this->dbPath);
         if (!is_dir($targetDir)) {
-            @mkdir($targetDir, 0775, true);
+            @mkdir($targetDir, 0750, true);
+        }
+
+        // Web erişimine karşı dizini koru
+        $htaccess = $targetDir . DIRECTORY_SEPARATOR . '.htaccess';
+        if (!file_exists($htaccess)) {
+            @file_put_contents($htaccess, "<IfModule !mod_authz_core.c>\nOrder deny,allow\nDeny from all\n</IfModule>\n<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n");
+        }
+        $indexHtml = $targetDir . DIRECTORY_SEPARATOR . 'index.html';
+        if (!file_exists($indexHtml)) {
+            @file_put_contents($indexHtml, "<!DOCTYPE html><html><head><title>Access Denied</title></head><body>Forbidden</body></html>");
         }
 
         $tempFile = $this->dbPath . '.tmp';
@@ -71,6 +81,9 @@ class MaxMindGeoService
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_TIMEOUT => 300,
                 CURLOPT_CONNECTTIMEOUT => 20,
+                CURLOPT_PROTOCOLS => CURLPROTO_HTTPS,
+                CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTPS,
+                CURLOPT_MAXREDIRS => 5,
                 CURLOPT_SSL_VERIFYPEER => false,
                 CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) WP-Statistics-GeoLite-Client',
             ]);
@@ -127,7 +140,12 @@ class MaxMindGeoService
         $cleanIp = trim($ip);
         if ($cleanIp === '' || in_array($cleanIp, ['127.0.0.1', '::1', 'localhost'], true)) {
             // Yerel geliştirme için varsayılan İstanbul/Kadıköy DTO'su
-            return $this->getDefaultDto($cleanIp);
+            return $this->getDefaultDto('127.0.0.1');
+        }
+
+        // IP formatı doğrulaması
+        if (!filter_var($cleanIp, FILTER_VALIDATE_IP)) {
+            return $this->getDefaultDto('127.0.0.1');
         }
 
         if (self::$reader !== null) {

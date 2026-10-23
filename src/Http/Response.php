@@ -23,6 +23,10 @@ class Response
     {
         $headers = array_merge([
             'Content-Type' => 'application/json; charset=utf-8',
+            'X-Content-Type-Options' => 'nosniff',
+            'X-Frame-Options' => 'DENY',
+            'X-XSS-Protection' => '1; mode=block',
+            'Referrer-Policy' => 'strict-origin-when-cross-origin',
             'Access-Control-Allow-Origin' => '*',
             'Access-Control-Allow-Methods' => 'GET, POST, OPTIONS',
             'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With',
@@ -41,7 +45,9 @@ class Response
         if (!headers_sent()) {
             http_response_code($this->statusCode);
             foreach ($this->headers as $name => $value) {
-                header("{$name}: {$value}");
+                $cleanName = preg_replace('/[\r\n]/', '', (string) $name);
+                $cleanValue = preg_replace('/[\r\n]/', '', (string) $value);
+                header("{$cleanName}: {$cleanValue}");
             }
         }
 

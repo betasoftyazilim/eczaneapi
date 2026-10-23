@@ -49,16 +49,22 @@ class Request
 
     public function input(string $key, mixed $default = null): mixed
     {
+        $val = null;
         if (is_array($this->jsonBody) && array_key_exists($key, $this->jsonBody)) {
-            return $this->jsonBody[$key];
+            $val = $this->jsonBody[$key];
+        } elseif (array_key_exists($key, $this->postParams)) {
+            $val = $this->postParams[$key];
+        } elseif (array_key_exists($key, $this->queryParams)) {
+            $val = $this->queryParams[$key];
+        } else {
+            return $default;
         }
-        if (array_key_exists($key, $this->postParams)) {
-            return $this->postParams[$key];
+
+        if (is_string($val)) {
+            return str_replace("\0", '', trim($val));
         }
-        if (array_key_exists($key, $this->queryParams)) {
-            return $this->queryParams[$key];
-        }
-        return $default;
+
+        return $val;
     }
 
     public function getMethod(): string
@@ -98,6 +104,7 @@ class Request
             }
         }
 
-        return (string) ($this->serverParams['REMOTE_ADDR'] ?? '127.0.0.1');
+        $remote = (string) ($this->serverParams['REMOTE_ADDR'] ?? '');
+        return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '127.0.0.1';
     }
 }

@@ -24,59 +24,69 @@ class EczaneController
      * GET /api/v1/nobetci?ip=auto
      * GET /api/v1/nobetci?lat=41.0082&lon=28.9784
      */
-     public function index(Request $request): Response
-     {
-         $geoService = new \EczaneApi\Geo\MaxMindGeoService();
-         $geoMeta = null;
- 
-         $il = $request->input('il');
-         $ilce = $request->input('ilce');
-         $ipParam = $request->input('ip');
-         $latParam = $request->input('lat');
-         $lonParam = $request->input('lon');
- 
-         // IP'den otomatik tespit istenmişse veya il belirtilmemiş ve ip verilmişse
-         if ($ipParam !== null || ($il === null && $latParam === null)) {
-             $targetIp = ($ipParam === 'auto' || $ipParam === null || $ipParam === '') ? $request->getIp() : (string) $ipParam;
-             $geoDto = $geoService->lookup($targetIp);
-             if ($geoDto !== null) {
-                 if ($il === null || $il === '') {
-                     $il = $geoDto->getProvinceName();
-                 }
-                 if (($ilce === null || $ilce === '') && $geoDto->getDistrictName()) {
-                     $ilce = $geoDto->getDistrictName();
-                 }
-                 $geoMeta = $geoDto->toArray();
-             }
-         }
- 
-         $il = (string) ($il ?: 'İstanbul');
-         $tarih = $request->input('tarih');
-         $force = (bool) $request->input('refresh', false);
- 
-         $eczaneler = $this->service->getNobetciEczaneler($il, $ilce, $tarih, $force);
- 
-         // Koordinat verilmişse mesafeye göre sırala
-         $userLat = ($latParam !== null && is_numeric($latParam)) ? (float) $latParam : null;
-         $userLon = ($lonParam !== null && is_numeric($lonParam)) ? (float) $lonParam : null;
- 
-         $data = array_map(static fn ($e) => $e->toArray(), $eczaneler);
-         if ($userLat !== null && $userLon !== null) {
-             $data = \EczaneApi\Geo\MaxMindGeoService::sortByDistance($data, $userLat, $userLon);
-         }
- 
-         return Response::api(ApiResponse::success(
-             data: $data,
-             message: count($data) . ' nöbetçi eczane başarıyla listelendi.',
-             meta: [
-                 'il' => $il,
-                 'ilce' => $ilce,
-                 'tarih' => $tarih ?? date('Y-m-d'),
-                 'maxmind_geo' => $geoMeta,
-                 'user_coordinates' => ($userLat && $userLon) ? ['latitude' => $userLat, 'longitude' => $userLon] : null,
-             ]
-         ));
-     }
+    public function index(Request $request): Response
+    {
+        $geoService = new \EczaneApi\Geo\MaxMindGeoService();
+        $geoMeta = null;
+
+        $il = $this->sanitizeText($request->input('il'), 60);
+        $ilce = $this->sanitizeText($request->input('ilce'), 60);
+        $ipParam = $this->sanitizeText($request->input('ip'), 45);
+        $latParam = $request->input('lat');
+        $lonParam = $request->input('lon');
+
+        // IP'den otomatik tespit istenmişse veya il belirtilmemiş ve ip verilmişse
+        if ($ipParam !== null || ($il === null && $latParam === null)) {
+            $targetIp = ($ipParam === 'auto' || $ipParam === null || $ipParam === '')
+                ? $request->getIp()
+                : (filter_var($ipParam, FILTER_VALIDATE_IP) ? $ipParam : $request->getIp());
+
+            $geoDto = $geoService->lookup($targetIp);
+            if ($geoDto !== null) {
+                if ($il === null || $il === '') {
+                    $il = $geoDto->getProvinceName();
+                }
+                if (($ilce === null || $ilce === '') && $geoDto->getDistrictName()) {
+                    $ilce = $geoDto->getDistrictName();
+                }
+                $geoMeta = $geoDto->toArray();
+            }
+        }
+
+        $il = (string) ($il ?: 'İstanbul');
+        $tarih = $this->validateDate($request->input('tarih'));
+        $force = (bool) $request->input('refresh', false);
+
+        $eczaneler = $this->service->getNobetciEczaneler($il, $ilce, $tarih, $force);
+
+        // Koordinat verilmişse mesafeye göre sırala
+        $userLat = ($latParam !== null && is_numeric($latParam)) ? (float) $latParam : null;
+        $userLon = ($lonParam !== null && is_numeric($lonParam)) ? (float) $lonParam : null;
+
+        if ($userLat !== null && ($userLat < -90.0 || $userLat > 90.0)) {
+            $userLat = null;
+        }
+        if ($userLon !== null && ($userLon < -180.0 || $userLon > 180.0)) {
+            $userLon = null;
+        }
+
+        $data = array_map(static fn ($e) => $e->toArray(), $eczaneler);
+        if ($userLat !== null && $userLon !== null) {
+            $data = \EczaneApi\Geo\MaxMindGeoService::sortByDistance($data, $userLat, $userLon);
+        }
+
+        return Response::api(ApiResponse::success(
+            data: $data,
+            message: count($data) . ' nöbetçi eczane başarıyla listelendi.',
+            meta: [
+                'il' => $il,
+                'ilce' => $ilce,
+                'tarih' => $tarih ?? date('Y-m-d'),
+                'maxmind_geo' => $geoMeta,
+                'user_coordinates' => ($userLat && $userLon) ? ['latitude' => $userLat, 'longitude' => $userLon] : null,
+            ]
+        ));
+    }
  
      /**
       * MaxMind GeoIP IP Konum Sorgulama Uç Noktası
@@ -147,7 +157,7 @@ class EczaneController
         return Response::api(ApiResponse::success(
             data: [
                 'service' => 'Eczane API Servisi',
-                'version' => '1.0.0',
+                'version' => '1.0.1',
                 'php_version' => PHP_VERSION,
                 'timezone' => date_default_timezone_get(),
                 'server_time' => date('c'),
@@ -187,5 +197,36 @@ class EczaneController
                 ? ApiResponse::success(null, 'Önbellek başarıyla temizlendi.')
                 : ApiResponse::error('Önbellek temizlenemedi.', 500)
         );
+    }
+
+    private function sanitizeText(mixed $value, int $maxLength = 100): ?string
+    {
+        if ($value === null || !is_scalar($value)) {
+            return null;
+        }
+
+        $cleaned = preg_replace('/[\x00-\x1F\x7F]/u', '', trim((string) $value));
+        if ($cleaned === '') {
+            return null;
+        }
+
+        return mb_substr($cleaned, 0, $maxLength, 'UTF-8');
+    }
+
+    private function validateDate(mixed $date): ?string
+    {
+        if ($date === null || !is_string($date)) {
+            return null;
+        }
+
+        $trimmed = trim($date);
+        if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $trimmed)) {
+            [$year, $month, $day] = explode('-', $trimmed);
+            if (checkdate((int) $month, (int) $day, (int) $year)) {
+                return $trimmed;
+            }
+        }
+
+        return null;
     }
 }

@@ -115,8 +115,8 @@ class EDevletSource implements EczaneSourceInterface
     private function parseResultHtml(string $html, string $city): array
     {
         $dom = new DOMDocument();
-        // UTF-8 uyumluluğu için libxml ve XML encoding öneki
-        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NOERROR | LIBXML_NOWARNING);
+        // UTF-8 uyumluluğu ve XXE güvenliği için LIBXML_NONET ile yükle
+        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NOERROR | LIBXML_NOWARNING | LIBXML_NONET);
         $xpath = new DOMXPath($dom);
 
         $rows = $xpath->query('//table//tbody/tr');

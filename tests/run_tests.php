@@ -113,6 +113,17 @@ $req = new Request([], [], ['REQUEST_METHOD' => 'GET', 'REQUEST_URI' => '/api/v1
 $res = $router->dispatch($req);
 assertTest('Router RESTful dispatch', $res instanceof \EczaneApi\Http\Response);
 
+// 8. Güvenlik ve SSRF Doğrulama Testleri
+$httpClient = new \EczaneApi\Http\CurlHttpClient();
+$invalidRes = $httpClient->get('file:///etc/passwd');
+assertTest('SSRF & Protokol Engelleme (file:// engellendi)', $invalidRes === null && str_contains($httpClient->getLastError() ?? '', 'desteklenmeyen URL'));
+
+$nullByteReq = new Request(['test' => "guvenlik\0tehditi"], [], []);
+assertTest('Input Null-Byte Temizleme', $nullByteReq->input('test') === 'guvenliktehditi');
+
+$secHeadersRes = \EczaneApi\Http\Response::json(['ok' => true]);
+assertTest('Response Nesnesi Başarıyla Üretildi', $secHeadersRes instanceof \EczaneApi\Http\Response);
+
 echo "\n--------------------------------------------------------\n";
 echo "📊 TEST SONUÇLARI: {$passed} Başarılı | {$failed} Hatalı\n";
 echo "--------------------------------------------------------\n";
