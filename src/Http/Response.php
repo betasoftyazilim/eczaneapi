@@ -35,6 +35,19 @@ class Response
         return new self($data, $statusCode, $headers);
     }
 
+    public static function xml(string $xmlContent, int $statusCode = 200, array $headers = []): self
+    {
+        $headers = array_merge([
+            'Content-Type' => 'application/xml; charset=utf-8',
+            'X-Content-Type-Options' => 'nosniff',
+            'X-Frame-Options' => 'DENY',
+            'X-XSS-Protection' => '1; mode=block',
+            'Access-Control-Allow-Origin' => '*',
+        ], $headers);
+
+        return new self($xmlContent, $statusCode, $headers);
+    }
+
     public static function api(ApiResponse $apiResponse): self
     {
         return self::json($apiResponse->toArray(), $apiResponse->statusCode);

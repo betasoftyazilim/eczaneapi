@@ -75,6 +75,10 @@ class EczaneController
             $data = \EczaneApi\Geo\MaxMindGeoService::sortByDistance($data, $userLat, $userLon);
         }
 
+        if ($request->input('format') === 'xml') {
+            return Response::xml($this->toOdaXml($data, $il, $ilce, $tarih));
+        }
+
         return Response::api(ApiResponse::success(
             data: $data,
             message: count($data) . ' nöbetçi eczane başarıyla listelendi.',
@@ -228,5 +232,36 @@ class EczaneController
         }
 
         return null;
+    }
+
+    private function toOdaXml(array $eczaneler, string $il, ?string $ilce, ?string $tarih): string
+    {
+        $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>');
+
+        $nobetBilgi = $xml->addChild('NobetBilgi');
+        $nobetBilgi->addChild('Tarih', htmlspecialchars($tarih ?? date('Y-m-d')));
+        $nobetBilgi->addChild('NobetBaslangic', date('Y-m-d\T08:30:00'));
+        $nobetBilgi->addChild('NobetBitis', date('Y-m-d\T08:30:00', strtotime('+1 day')));
+        $nobetBilgi->addChild('Il', htmlspecialchars($il));
+        if ($ilce) {
+            $nobetBilgi->addChild('Ilce', htmlspecialchars($ilce));
+        }
+
+        foreach ($eczaneler as $ecz) {
+            $url = $xml->addChild('url');
+            $url->addChild('EczaneAd', htmlspecialchars($ecz['name'] ?? ''));
+            $url->addChild('EczaneTelefon', htmlspecialchars($ecz['phone'] ?? ''));
+            $url->addChild('EczaneAdres', htmlspecialchars($ecz['address'] ?? ''));
+            $url->addChild('EczaneBolge', htmlspecialchars($ecz['dist'] ?? ''));
+            $url->addChild('EczaneIlce', htmlspecialchars($ecz['dist'] ?? ''));
+            $url->addChild('EczaneIl', htmlspecialchars($ecz['city'] ?? $il));
+            $url->addChild('EczaneEnlem', (string) ($ecz['latitude'] ?? $ecz['lat'] ?? ''));
+            $url->addChild('EczaneBoylam', (string) ($ecz['longitude'] ?? $ecz['lon'] ?? ''));
+            $url->addChild('EczaneGLN', (string) ($ecz['gln'] ?? ''));
+            $url->addChild('NobetBaslangic', htmlspecialchars($ecz['nobet_baslangic'] ?? ''));
+            $url->addChild('NobetBitis', htmlspecialchars($ecz['nobet_bitis'] ?? ''));
+        }
+
+        return $xml->asXML() ?: '';
     }
 }
