@@ -1,0 +1,415 @@
+{
+    "tarih": "2026-10-23T23:03:10+03:00",
+    "toplam_il": 81,
+    "basarili_sayisi": 71,
+    "cekilemeyen_sayisi": 10,
+    "basarili_iller": {
+        "Adana": {
+            "plaka": 1,
+            "il": "Adana",
+            "eczane_sayisi": 34
+        },
+        "Adıyaman": {
+            "plaka": 2,
+            "il": "Adıyaman",
+            "eczane_sayisi": 9
+        },
+        "Afyonkarahisar": {
+            "plaka": 3,
+            "il": "Afyonkarahisar",
+            "eczane_sayisi": 14
+        },
+        "Ağrı": {
+            "plaka": 4,
+            "il": "Ağrı",
+            "eczane_sayisi": 9
+        },
+        "Amasya": {
+            "plaka": 5,
+            "il": "Amasya",
+            "eczane_sayisi": 7
+        },
+        "Ankara": {
+            "plaka": 6,
+            "il": "Ankara",
+            "eczane_sayisi": 47
+        },
+        "Antalya": {
+            "plaka": 7,
+            "il": "Antalya",
+            "eczane_sayisi": 37
+        },
+        "Balıkesir": {
+            "plaka": 10,
+            "il": "Balıkesir",
+            "eczane_sayisi": 29
+        },
+        "Bilecik": {
+            "plaka": 11,
+            "il": "Bilecik",
+            "eczane_sayisi": 5
+        },
+        "Bingöl": {
+            "plaka": 12,
+            "il": "Bingöl",
+            "eczane_sayisi": 5
+        },
+        "Bitlis": {
+            "plaka": 13,
+            "il": "Bitlis",
+            "eczane_sayisi": 8
+        },
+        "Bolu": {
+            "plaka": 14,
+            "il": "Bolu",
+            "eczane_sayisi": 7
+        },
+        "Burdur": {
+            "plaka": 15,
+            "il": "Burdur",
+            "eczane_sayisi": 6
+        },
+        "Bursa": {
+            "plaka": 16,
+            "il": "Bursa",
+            "eczane_sayisi": 34
+        },
+        "Çanakkale": {
+            "plaka": 17,
+            "il": "Çanakkale",
+            "eczane_sayisi": 16
+        },
+        "Çankırı": {
+            "plaka": 18,
+            "il": "Çankırı",
+            "eczane_sayisi": 12
+        },
+        "Çorum": {
+            "plaka": 19,
+            "il": "Çorum",
+            "eczane_sayisi": 16
+        },
+        "Denizli": {
+            "plaka": 20,
+            "il": "Denizli",
+            "eczane_sayisi": 23
+        },
+        "Diyarbakır": {
+            "plaka": 21,
+            "il": "Diyarbakır",
+            "eczane_sayisi": 23
+        },
+        "Edirne": {
+            "plaka": 22,
+            "il": "Edirne",
+            "eczane_sayisi": 2
+        },
+        "Erzincan": {
+            "plaka": 24,
+            "il": "Erzincan",
+            "eczane_sayisi": 7
+        },
+        "Erzurum": {
+            "plaka": 25,
+            "il": "Erzurum",
+            "eczane_sayisi": 20
+        },
+        "Gaziantep": {
+            "plaka": 27,
+            "il": "Gaziantep",
+            "eczane_sayisi": 21
+        },
+        "Giresun": {
+            "plaka": 28,
+            "il": "Giresun",
+            "eczane_sayisi": 15
+        },
+        "Gümüşhane": {
+            "plaka": 29,
+            "il": "Gümüşhane",
+            "eczane_sayisi": 6
+        },
+        "Hatay": {
+            "plaka": 31,
+            "il": "Hatay",
+            "eczane_sayisi": 27
+        },
+        "Isparta": {
+            "plaka": 32,
+            "il": "Isparta",
+            "eczane_sayisi": 3
+        },
+        "Mersin": {
+            "plaka": 33,
+            "il": "Mersin",
+            "eczane_sayisi": 23
+        },
+        "İstanbul": {
+            "plaka": 34,
+            "il": "İstanbul",
+            "eczane_sayisi": 123
+        },
+        "İzmir": {
+            "plaka": 35,
+            "il": "İzmir",
+            "eczane_sayisi": 67
+        },
+        "Kars": {
+            "plaka": 36,
+            "il": "Kars",
+            "eczane_sayisi": 7
+        },
+        "Kastamonu": {
+            "plaka": 37,
+            "il": "Kastamonu",
+            "eczane_sayisi": 23
+        },
+        "Kırklareli": {
+            "plaka": 39,
+            "il": "Kırklareli",
+            "eczane_sayisi": 11
+        },
+        "Kocaeli": {
+            "plaka": 41,
+            "il": "Kocaeli",
+            "eczane_sayisi": 24
+        },
+        "Konya": {
+            "plaka": 42,
+            "il": "Konya",
+            "eczane_sayisi": 49
+        },
+        "Kütahya": {
+            "plaka": 43,
+            "il": "Kütahya",
+            "eczane_sayisi": 13
+        },
+        "Manisa": {
+            "plaka": 45,
+            "il": "Manisa",
+            "eczane_sayisi": 22
+        },
+        "Kahramanmaraş": {
+            "plaka": 46,
+            "il": "Kahramanmaraş",
+            "eczane_sayisi": 18
+        },
+        "Mardin": {
+            "plaka": 47,
+            "il": "Mardin",
+            "eczane_sayisi": 11
+        },
+        "Muğla": {
+            "plaka": 48,
+            "il": "Muğla",
+            "eczane_sayisi": 34
+        },
+        "Nevşehir": {
+            "plaka": 50,
+            "il": "Nevşehir",
+            "eczane_sayisi": 9
+        },
+        "Niğde": {
+            "plaka": 51,
+            "il": "Niğde",
+            "eczane_sayisi": 7
+        },
+        "Ordu": {
+            "plaka": 52,
+            "il": "Ordu",
+            "eczane_sayisi": 19
+        },
+        "Rize": {
+            "plaka": 53,
+            "il": "Rize",
+            "eczane_sayisi": 6
+        },
+        "Sakarya": {
+            "plaka": 54,
+            "il": "Sakarya",
+            "eczane_sayisi": 18
+        },
+        "Samsun": {
+            "plaka": 55,
+            "il": "Samsun",
+            "eczane_sayisi": 21
+        },
+        "Siirt": {
+            "plaka": 56,
+            "il": "Siirt",
+            "eczane_sayisi": 8
+        },
+        "Sinop": {
+            "plaka": 57,
+            "il": "Sinop",
+            "eczane_sayisi": 7
+        },
+        "Sivas": {
+            "plaka": 58,
+            "il": "Sivas",
+            "eczane_sayisi": 16
+        },
+        "Tekirdağ": {
+            "plaka": 59,
+            "il": "Tekirdağ",
+            "eczane_sayisi": 22
+        },
+        "Tokat": {
+            "plaka": 60,
+            "il": "Tokat",
+            "eczane_sayisi": 10
+        },
+        "Trabzon": {
+            "plaka": 61,
+            "il": "Trabzon",
+            "eczane_sayisi": 21
+        },
+        "Tunceli": {
+            "plaka": 62,
+            "il": "Tunceli",
+            "eczane_sayisi": 3
+        },
+        "Şanlıurfa": {
+            "plaka": 63,
+            "il": "Şanlıurfa",
+            "eczane_sayisi": 20
+        },
+        "Uşak": {
+            "plaka": 64,
+            "il": "Uşak",
+            "eczane_sayisi": 8
+        },
+        "Van": {
+            "plaka": 65,
+            "il": "Van",
+            "eczane_sayisi": 3
+        },
+        "Yozgat": {
+            "plaka": 66,
+            "il": "Yozgat",
+            "eczane_sayisi": 14
+        },
+        "Zonguldak": {
+            "plaka": 67,
+            "il": "Zonguldak",
+            "eczane_sayisi": 20
+        },
+        "Aksaray": {
+            "plaka": 68,
+            "il": "Aksaray",
+            "eczane_sayisi": 9
+        },
+        "Bayburt": {
+            "plaka": 69,
+            "il": "Bayburt",
+            "eczane_sayisi": 2
+        },
+        "Karaman": {
+            "plaka": 70,
+            "il": "Karaman",
+            "eczane_sayisi": 6
+        },
+        "Kırıkkale": {
+            "plaka": 71,
+            "il": "Kırıkkale",
+            "eczane_sayisi": 5
+        },
+        "Batman": {
+            "plaka": 72,
+            "il": "Batman",
+            "eczane_sayisi": 8
+        },
+        "Şırnak": {
+            "plaka": 73,
+            "il": "Şırnak",
+            "eczane_sayisi": 5
+        },
+        "Bartın": {
+            "plaka": 74,
+            "il": "Bartın",
+            "eczane_sayisi": 6
+        },
+        "Ardahan": {
+            "plaka": 75,
+            "il": "Ardahan",
+            "eczane_sayisi": 3
+        },
+        "Iğdır": {
+            "plaka": 76,
+            "il": "Iğdır",
+            "eczane_sayisi": 3
+        },
+        "Yalova": {
+            "plaka": 77,
+            "il": "Yalova",
+            "eczane_sayisi": 6
+        },
+        "Karabük": {
+            "plaka": 78,
+            "il": "Karabük",
+            "eczane_sayisi": 6
+        },
+        "Osmaniye": {
+            "plaka": 80,
+            "il": "Osmaniye",
+            "eczane_sayisi": 7
+        },
+        "Düzce": {
+            "plaka": 81,
+            "il": "Düzce",
+            "eczane_sayisi": 11
+        }
+    },
+    "cekilemeyen_iller": [
+        {
+            "plaka": 8,
+            "il": "Artvin",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 9,
+            "il": "Aydın",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 23,
+            "il": "Elazığ",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 26,
+            "il": "Eskişehir",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 30,
+            "il": "Hakkari",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 38,
+            "il": "Kayseri",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 40,
+            "il": "Kırşehir",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 44,
+            "il": "Malatya",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 49,
+            "il": "Muş",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        },
+        {
+            "plaka": 79,
+            "il": "Kilis",
+            "hata": "Veri bulunamadı veya e-Devlet yanıt vermedi"
+        }
+    ]
+}

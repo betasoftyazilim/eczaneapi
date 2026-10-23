@@ -1,0 +1,9 @@
+/vendor/
+/storage/cache/*.json
+/storage/cache_test/
+/storage/geoip/*.mmdb
+*.mmdb
+*.tmp
+composer.lock
+.phpunit.result.cache
+.env
