@@ -1,0 +1,25 @@
+{
+    "name": "betasoftyazilim/eczaneapi-client",
+    "description": "Türkiye 81 İl ve 973 İlçesi İçin Resmi ve Güncel Nöbetçi Eczane API PHP SDK İstemcisi",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BetaSoft Yazılım",
+            "email": "betasoftyazilim@gmail.com",
+            "homepage": "https://betasoft.com.tr"
+        }
+    ],
+    "homepage": "https://betasoft.com.tr",
+    "require": {
+        "php": ">=7.4 || >=8.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "EczaneApi\\Client\\": "src/"
+        }
+    }
+}

@@ -18,7 +18,7 @@
     "pharmacy",
     "sdk"
   ],
-  "author": "BetaSoft Yazılım <betasoftyazilim@gmail.com>",
+  "author": "BetaSoft Yazılım <betasoftyazilim@gmail.com> (https://betasoft.com.tr)",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/betasoftyazilim/eczaneapi/issues"
   },
-  "homepage": "https://github.com/betasoftyazilim/eczaneapi#readme",
+  "homepage": "https://betasoft.com.tr",
   "devDependencies": {
     "typescript": "^5.9.3"
   },

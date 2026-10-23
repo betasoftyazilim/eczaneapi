@@ -7,9 +7,11 @@
     "authors": [
         {
             "name": "BetaSoft Yazılım",
-            "email": "betasoftyazilim@gmail.com"
+            "email": "betasoftyazilim@gmail.com",
+            "homepage": "https://betasoft.com.tr"
         }
     ],
+    "homepage": "https://betasoft.com.tr",
     "require": {
         "php": ">=8.0",
         "ext-curl": "*",

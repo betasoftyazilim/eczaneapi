@@ -371,9 +371,12 @@ Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
 
 ---
 
-## ⭐ Destek ve Katkı
+## ⭐ Geliştirici & Destek
+
+Bu proje **[BetaSoft Yazılım](https://betasoft.com.tr)** tarafından açık kaynak topluluğuna katkı sağlamak amacıyla geliştirilmiş ve ücretsiz kullanıma sunulmuştur.
 
 > **Projeyi beğendiyseniz ve işinize yaradıysa GitHub'da bir yıldız (⭐ Star) vermeyi unutmayın! Destekleriniz için teşekkürler.**
 > 
-> 👉 **[GitHub Deposu: betasoftyazilim/eczaneapi](https://github.com/betasoftyazilim/eczaneapi)**
+> 🌐 **Resmi Web Sitesi:** [betasoft.com.tr](https://betasoft.com.tr)  
+> 👉 **GitHub Deposu:** [betasoftyazilim/eczaneapi](https://github.com/betasoftyazilim/eczaneapi)
 

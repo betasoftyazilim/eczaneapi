@@ -1,0 +1,40 @@
+name: Release PHP (Packagist & Standalone SDK)
+
+on:
+  push:
+    tags:
+      - 'php-v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Test & Release PHP SDK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: php
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: curl, json
+
+      - name: Run Tests
+        run: php tests/test_client.php
+
+      - name: Create Zip Package
+        run: |
+          mkdir -p dist
+          zip -r dist/eczaneapi-php-client-${{ github.ref_name }}.zip src/ composer.json README.md LICENSE -x "*.git*"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "PHP SDK ${{ github.ref_name }}"
+          body_path: php/CHANGELOG.md
+          files: php/dist/*.zip

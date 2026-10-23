@@ -57,6 +57,7 @@ var sonuclar = await client.NobetciAsync("ankara", "cankaya");
 
 ---
 
-## 📦 Lisans
+## 📦 Lisans & Geliştirici
 
-MIT License - BetaSoft Yazılım
+MIT License - **[BetaSoft Yazılım](https://betasoft.com.tr)**  
+Web: [https://betasoft.com.tr](https://betasoft.com.tr)
