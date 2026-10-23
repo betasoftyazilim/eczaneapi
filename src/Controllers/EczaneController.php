@@ -202,7 +202,7 @@ class EczaneController
         return Response::api(ApiResponse::success(
             data: [
                 'service' => 'Eczane API Servisi',
-                'version' => '1.0.1',
+                'version' => '1.0.2',
                 'php_version' => PHP_VERSION,
                 'timezone' => date_default_timezone_get(),
                 'server_time' => date('c'),

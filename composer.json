@@ -1,7 +1,7 @@
 {
     "name": "betasoftyazilim/eczaneapi",
     "description": "Türkiye 81 İl ve İlçeleri İçin Nöbetçi Eczane API ve Kazıma Motoru (Laravel ve Tüm MVC Mimarileriyle Tam Uyumlu)",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "library",
     "license": "MIT",
     "authors": [
